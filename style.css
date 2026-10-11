@@ -1010,3 +1010,81 @@ button {
     gap: 14px;
   }
 }
+
+/* ===== Video Creator Layout Fix ===== */
+#videoCreator .video-creator-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px;
+  margin-top: 28px;
+  border: 1px solid rgba(153, 120, 255, 0.25);
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(153, 120, 255, 0.07),
+    rgba(45, 212, 191, 0.035)
+  );
+}
+
+#videoCreator .video-creator-panel label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#videoCreator #videoIdea,
+#videoCreator #videoStyle,
+#videoCreator #videoRatio,
+#videoCreator #videoCamera {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  box-sizing: border-box;
+  color: #f1f1fa;
+  background: #11121d;
+  border: 1px solid rgba(153, 120, 255, 0.3);
+  border-radius: 10px;
+  font: inherit;
+}
+
+#videoCreator #videoIdea {
+  min-height: 125px;
+  resize: vertical;
+}
+
+#videoCreator .video-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+#videoCreator .video-options > div {
+  min-width: 0;
+}
+
+#videoCreator #generateVideoPrompt {
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+#videoCreator #videoResult {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#videoCreator .video-creator-note {
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  #videoCreator .video-creator-panel {
+    padding: 18px;
+  }
+
+  #videoCreator .video-options {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
