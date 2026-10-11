@@ -42,6 +42,77 @@
       <div class="hero-decoration decoration-two">✧</div>
     </section>
 
+<!-- Video Creation Section -->
+<section class="section container reveal" id="videoCreator">
+  <div class="section-heading">
+    <div>
+      <span class="eyebrow">CREATE YOUR NEXT VIDEO</span>
+      <h2>AI Video <span class="gradient-text">Creator</span></h2>
+    </div>
+    <p>Turn your imagination into a ready-to-use AI video prompt.</p>
+  </div>
+
+  <div class="video-creator-panel">
+    <label for="videoIdea">Describe your video idea</label>
+    <textarea
+      id="videoIdea"
+      placeholder="Example: A sports car driving through a rainy city at night..."
+      rows="4"
+    ></textarea>
+
+    <div class="video-options">
+      <div>
+        <label for="videoStyle">Video Style</label>
+        <select id="videoStyle">
+          <option value="Cinematic">Cinematic</option>
+          <option value="Realistic">Realistic</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="Sci-Fi">Sci-Fi</option>
+          <option value="Nature">Nature</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="videoRatio">Aspect Ratio</label>
+        <select id="videoRatio">
+          <option value="9:16 vertical">9:16 — Reels / Shorts</option>
+          <option value="16:9 horizontal">16:9 — YouTube</option>
+          <option value="1:1 square">1:1 — Square</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="videoCamera">Camera Movement</label>
+        <select id="videoCamera">
+          <option value="smooth cinematic tracking shot">Tracking Shot</option>
+          <option value="slow camera push-in">Slow Push-in</option>
+          <option value="smooth aerial drone shot">Aerial Drone Shot</option>
+          <option value="dynamic camera movement">Dynamic Movement</option>
+          <option value="static camera shot">Static Shot</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="button button-primary" id="generateVideoPrompt" type="button">
+      Generate Video Prompt →
+    </button>
+
+    <div id="videoResult" hidden>
+      <h3>Your Generated Prompt</h3>
+      <p id="generatedVideoPrompt"></p>
+      <button class="button button-secondary" id="copyVideoPrompt" type="button">
+        Copy Prompt
+      </button>
+    </div>
+
+    <p class="video-creator-note">
+      This tool creates prompts for AI video generators. It does not generate
+      the actual video.
+    </p>
+  </div>
+</section>
+<!-- End Video Creation Section -->
+
     <section class="section container reveal" id="categories">
       <div class="section-heading">
         <div><span class="eyebrow">FIND YOUR INSPIRATION</span><h2>Explore Categories</h2></div>
