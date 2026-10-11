@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b12">
+  <meta name="description" content="Discover creative AI video prompts, cinematic ideas, and inspiration for your next video.">
+  <title>AI Creator Hub — Create Beyond Imagination</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="navbar">
+    <a href="#" class="brand"><span class="brand-icon">✳</span> AI Creator<span class="brand-light">Hub</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="navMenu">
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#prompts">Explore Prompts</a>
+      <a href="#about">About</a>
+    </nav>
+    <a href="#prompts" class="nav-cta">Explore <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero reveal" id="home">
+      <div class="hero-badge"><span class="live-dot"></span> YOUR CREATIVE AI TOOLKIT</div>
+      <h1>Turn Your Imagination<br>Into <span class="gradient-text">AI Videos.</span></h1>
+      <p class="hero-description">Discover powerful prompts, explore extraordinary ideas, and bring your creative vision to life.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#prompts">Explore Prompts <span>↗</span></a>
+        <a class="button button-secondary" href="#categories">Browse Categories</a>
+      </div>
+      <div class="hero-note"><span>✦</span> Curated ideas for your next creative project</div>
+      <div class="hero-decoration decoration-one">✳</div>
+      <div class="hero-decoration decoration-two">✧</div>
+    </section>
+
+    <section class="section container reveal" id="categories">
+      <div class="section-heading">
+        <div><span class="eyebrow">FIND YOUR INSPIRATION</span><h2>Explore Categories</h2></div>
+        <p>Ideas for every creative direction.</p>
+      </div>
+      <div class="category-grid">
+        <button class="category-card purple" data-category="Cinematic"><span class="category-icon">🎬</span><span class="category-name">Cinematic</span><span class="category-sub">Movie-style visuals</span><span class="card-arrow">↗</span></button>
+        <button class="category-card blue" data-category="Nature"><span class="category-icon">🌌</span><span class="category-name">Nature & Worlds</span><span class="category-sub">Beautiful new worlds</span><span class="card-arrow">↗</span></button>
+        <button class="category-card pink" data-category="Fantasy"><span class="category-icon">🪄</span><span class="category-name">Fantasy & Surreal</span><span class="category-sub">Beyond imagination</span><span class="card-arrow">↗</span></button>
+        <button class="category-card cyan" data-category="Sci-Fi"><span class="category-icon">🚀</span><span class="category-name">Sci-Fi & Future</span><span class="category-sub">Tomorrow starts here</span><span class="card-arrow">↗</span></button>
+      </div>
+    </section>
+
+    <section class="section container reveal" id="prompts">
+      <div class="section-heading">
+        <div><span class="eyebrow">THE PROMPT LIBRARY</span><h2>Discover Something <span class="gradient-text">Amazing.</span></h2></div>
+      </div>
+      <div class="search-panel">
+        <span class="search-icon">⌕</span>
+        <input id="searchInput" type="search" placeholder="Search prompts, styles, or ideas..." aria-label="Search prompts">
+        <span class="search-shortcut">PROMPT LIBRARY</span>
+      </div>
+      <div class="filter-row" id="filterRow">
+        <button class="filter active" data-filter="All">All Prompts</button>
+        <button class="filter" data-filter="Cinematic">Cinematic</button>
+        <button class="filter" data-filter="Nature">Nature</button>
+        <button class="filter" data-filter="Fantasy">Fantasy</button>
+        <button class="filter" data-filter="Sci-Fi">Sci-Fi</button>
+      </div>
+      <div class="prompt-grid" id="promptGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>No prompts found. Try another search.</div>
+    </section>
+
+    <section class="creator-banner container reveal" id="about">
+      <div class="banner-orb"></div>
+      <span class="eyebrow">YOUR NEXT IDEA STARTS HERE</span>
+      <h2>Great videos begin with<br><span class="gradient-text">great prompts.</span></h2>
+      <p>Explore ideas, experiment with styles, and create something uniquely yours.</p>
+      <a href="#prompts" class="button button-primary">Find Your Next Prompt ↗</a>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <a href="#home" class="brand"><span class="brand-icon">✳</span> AI Creator<span class="brand-light">Hub</span></a>
+    <p>Made for curious minds and creative makers.</p>
+    <span>© <span id="year"></span> AI Creator Hub</span>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <section class="prompt-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close dialog">×</button>
+      <span class="eyebrow" id="modalCategory">PROMPT DETAILS</span>
+      <h2 id="modalTitle">Prompt title</h2>
+      <p id="modalText"></p>
+      <button class="button button-primary" id="modalCopy">Copy Full Prompt ↗</button>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
