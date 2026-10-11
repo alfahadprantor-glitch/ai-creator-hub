@@ -510,3 +510,91 @@ if ("IntersectionObserver" in window) {
 document.getElementById("year").textContent = new Date().getFullYear();
 
 renderPrompts();
+
+/* ===== AI Video Creator Functionality ===== */
+(() => {
+  const ideaInput = document.getElementById("videoIdea");
+  const styleSelect = document.getElementById("videoStyle");
+  const ratioSelect = document.getElementById("videoRatio");
+  const cameraSelect = document.getElementById("videoCamera");
+  const generateButton = document.getElementById("generateVideoPrompt");
+  const resultBox = document.getElementById("videoResult");
+  const promptOutput = document.getElementById("generatedVideoPrompt");
+  const copyButton = document.getElementById("copyVideoPrompt");
+
+  if (
+    !ideaInput ||
+    !styleSelect ||
+    !ratioSelect ||
+    !cameraSelect ||
+    !generateButton ||
+    !resultBox ||
+    !promptOutput ||
+    !copyButton
+  ) {
+    return;
+  }
+
+  generateButton.addEventListener("click", () => {
+    const idea = ideaInput.value.trim();
+
+    if (!idea) {
+      ideaInput.focus();
+      ideaInput.placeholder = "Please describe your video idea first...";
+      return;
+    }
+
+    const style = styleSelect.value;
+    const ratio = ratioSelect.value;
+    const camera = cameraSelect.value;
+
+    const prompt = [
+      `Create a high-quality ${style.toLowerCase()} AI video based on this idea: ${idea}.`,
+      `Visual style: ${style}, with detailed environments, natural motion, coherent scene composition, and professional lighting.`,
+      `Camera movement: ${camera}.`,
+      `Aspect ratio: ${ratio}.`,
+      "Use smooth transitions, realistic motion, consistent subjects, rich visual details, and polished color grading.",
+      "Avoid flickering, distorted objects, inconsistent characters, unwanted text, and abrupt camera movements."
+    ].join("\n\n");
+
+    promptOutput.textContent = prompt;
+    resultBox.hidden = false;
+    resultBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+
+  copyButton.addEventListener("click", async () => {
+    const prompt = promptOutput.textContent;
+
+    try {
+      await navigator.clipboard.writeText(prompt);
+      if (typeof showToast === "function") {
+        showToast("Video prompt copied!");
+      } else {
+        copyButton.textContent = "Copied!";
+        setTimeout(() => {
+          copyButton.textContent = "Copy Prompt";
+        }, 1800);
+      }
+    } catch (error) {
+      const temporaryArea = document.createElement("textarea");
+      temporaryArea.value = prompt;
+      temporaryArea.style.position = "fixed";
+      temporaryArea.style.opacity = "0";
+      document.body.appendChild(temporaryArea);
+      temporaryArea.select();
+
+      const copied = document.execCommand("copy");
+      temporaryArea.remove();
+
+      if (copied) {
+        if (typeof showToast === "function") {
+          showToast("Video prompt copied!");
+        } else {
+          copyButton.textContent = "Copied!";
+        }
+      } else {
+        window.prompt("Copy your video prompt:", prompt);
+      }
+    }
+  });
+})();
