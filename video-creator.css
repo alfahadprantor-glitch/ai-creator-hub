@@ -1,0 +1,64 @@
+
+/* AI Video Creator - standalone styles */
+#videoCreator .video-creator-panel {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 28px;
+  margin-top: 24px;
+  background: #141522;
+  border: 1px solid #554080;
+  border-radius: 18px;
+}
+
+#videoCreator label {
+  display: block;
+  margin-bottom: 8px;
+  color: #f1f1fa;
+}
+
+#videoCreator textarea,
+#videoCreator select {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  box-sizing: border-box;
+  padding: 14px;
+  margin: 8px 0 18px;
+  color: #f1f1fa;
+  background: #10111b;
+  border: 1px solid #554080;
+  border-radius: 10px;
+  font: inherit;
+}
+
+#videoCreator textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#videoCreator .video-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+#videoCreator button {
+  cursor: pointer;
+}
+
+#videoCreator #videoResult {
+  margin-top: 24px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 700px) {
+  #videoCreator .video-options {
+    grid-template-columns: 1fr;
+  }
+
+  #videoCreator .video-creator-panel {
+    padding: 18px;
+  }
+}
+
