@@ -1131,3 +1131,51 @@ button {
     grid-template-columns: 1fr !important;
   }
 }
+```css
+/* Permanent AI Video Creator Fix */
+#videoCreator .video-creator-panel {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 28px !important;
+  margin-top: 28px !important;
+  background: #141522 !important;
+  border: 1px solid #554080 !important;
+  border-radius: 18px !important;
+}
+
+#videoCreator #videoIdea,
+#videoCreator select {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 14px !important;
+  margin: 8px 0 18px !important;
+  color: #f1f1fa !important;
+  background: #10111b !important;
+  border: 1px solid #554080 !important;
+  border-radius: 10px !important;
+  font: inherit !important;
+}
+
+#videoCreator #videoIdea {
+  min-height: 120px !important;
+}
+
+#videoCreator .video-options {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+}
+
+#videoCreator label {
+  display: block !important;
+  margin-bottom: 8px !important;
+}
+
+@media (max-width: 700px) {
+  #videoCreator .video-options {
+    grid-template-columns: 1fr !important;
+  }
+}
+```
