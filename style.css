@@ -1197,7 +1197,6 @@ button {
   filter: drop-shadow(0 0 5px rgba(168, 85, 247, 0.55))
           drop-shadow(0 0 10px rgba(34, 211, 238, 0.25));
 }
-```css
 /* ===== VIRAL PROMPTS SECTION ===== */
 
 #viral-prompts {
@@ -1318,4 +1317,3 @@ button {
     padding: 20px;
   }
 }
-```
