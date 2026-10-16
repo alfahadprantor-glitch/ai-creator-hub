@@ -1197,3 +1197,125 @@ button {
   filter: drop-shadow(0 0 5px rgba(168, 85, 247, 0.55))
           drop-shadow(0 0 10px rgba(34, 211, 238, 0.25));
 }
+```css
+/* ===== VIRAL PROMPTS SECTION ===== */
+
+#viral-prompts {
+  position: relative;
+  padding: 38px 24px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at top left, rgba(0, 229, 255, 0.10), transparent 45%),
+    radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.15), transparent 45%),
+    #0c101b;
+}
+
+#viral-prompts .eyebrow {
+  color: #38e8ff;
+}
+
+#viral-prompts .gradient-text {
+  background: linear-gradient(90deg, #38e8ff, #a78bfa, #f0abfc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.viral-prompt-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.viral-prompt-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid rgba(56, 232, 255, 0.22);
+  border-radius: 18px;
+  background: linear-gradient(145deg, #132333, #171329);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.viral-prompt-card:hover {
+  transform: translateY(-5px);
+  border-color: #38e8ff;
+  box-shadow: 0 8px 30px rgba(56, 232, 255, 0.10);
+}
+
+.viral-prompt-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.viral-icon {
+  font-size: 28px;
+}
+
+.viral-tag {
+  padding: 6px 10px;
+  border: 1px solid rgba(56, 232, 255, 0.3);
+  border-radius: 20px;
+  color: #5cecff;
+  background: rgba(56, 232, 255, 0.06);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.viral-prompt-card h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.viral-prompt-card p {
+  margin: 0;
+  color: #b9c6d8;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.viral-copy {
+  margin-top: auto;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(100deg, #087f9b, #6941c6);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.viral-copy:hover {
+  box-shadow: 0 0 20px rgba(56, 232, 255, 0.22);
+}
+
+#viralCopyStatus {
+  color: #5cecff;
+  margin-top: 12px;
+}
+
+@media (max-width: 700px) {
+  #viral-prompts {
+    padding: 24px 16px;
+  }
+
+  .viral-prompt-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .viral-prompt-card {
+    padding: 20px;
+  }
+}
+```
